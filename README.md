@@ -1,1 +1,1 @@
-# test-mui
+# Test project for Material-UI
