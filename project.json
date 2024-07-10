@@ -1,5 +1,5 @@
 {
-  "name": "org",
+  "name": "test-mui",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "sourceRoot": ".",
   "projectType": "application",
