@@ -12,7 +12,7 @@
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": "./org",
+    "baseUrl": "/",
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",
     "allowJs": true,
@@ -37,7 +37,7 @@
     "src/**/*.js",
     "src/**/*.jsx",
     ".next/types/**/*.ts",
-    "dist/org/.next/types/**/*.ts",
+    "dist/test-mui/.next/types/**/*.ts",
     "next-env.d.ts"
   ],
   "exclude": [
@@ -46,6 +46,6 @@
     "jest.config.ts",
     "src/**/*.spec.ts",
     "src/**/*.test.ts",
-    "dist/org/**/*"
+    "dist/**/*"
   ]
 }
