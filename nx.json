@@ -1,11 +1,14 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "$schema": "node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
       "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s",
       "!{projectRoot}/.eslintrc.json",
       "!{projectRoot}/eslint.config.js"
     ],
@@ -13,13 +16,18 @@
   },
   "plugins": [
     {
-      "plugin": "@nx/vite/plugin",
+      "plugin": "@nx/next/plugin",
       "options": {
+        "startTargetName": "start",
         "buildTargetName": "build",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview",
+        "devTargetName": "dev",
         "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
       }
     },
     {
@@ -29,19 +37,9 @@
       }
     }
   ],
-  "defaultProject": "org",
   "generators": {
-    "@nx/react": {
+    "@nx/next": {
       "application": {
-        "babel": true,
-        "style": "@emotion/styled",
-        "linter": "eslint",
-        "bundler": "vite"
-      },
-      "component": {
-        "style": "@emotion/styled"
-      },
-      "library": {
         "style": "@emotion/styled",
         "linter": "eslint"
       }
